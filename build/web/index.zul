@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window>
+	 <grid width="700px">
+		<columns>
+			<column label="Kode" width="200px"/>
+			<column label="Nama" width="500px"/>
+		</columns>
+		<rows>
+			<row>
+                            	<label id=""  />  
+                                <textbox value=""/>
+			</row>
+		</rows>
+	</grid>
+    </window>
+</zk>
