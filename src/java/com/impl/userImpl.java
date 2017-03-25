@@ -7,6 +7,7 @@ package com.impl;
 
 import com.dao.userDao;
 import com.koneksi.Config;
+import com.koneksi.DaoFactory;
 import com.koneksi.koneksi;
 import com.model.UserTbls;
 import java.sql.Connection;
@@ -22,15 +23,16 @@ import java.util.List;
  */
 public class userImpl implements userDao {
 
-    public UserTbls getUser(Connection con, String pemakai) {
+    public UserTbls getUser(DaoFactory daoFactory, String pemakai) {
 
         ResultSet rs = null;
         PreparedStatement ps = null;
         UserTbls ret = null;
+        Connection con = null;
         try {
-            
-            String query = " SELECT PEMAKAI, NRK FROM USER_TBL WHERE UCASE(PEMAKAI)= ? ";
 
+            String query = " SELECT PEMAKAI, NRK, NRK AS NRK2 FROM USER_TBL WHERE UCASE(PEMAKAI)= ? ";
+            con = daoFactory.getConnection();
             ps = con.prepareStatement(query, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
             ps.setString(1, pemakai.toUpperCase());
             rs = ps.executeQuery();
@@ -39,7 +41,7 @@ public class userImpl implements userDao {
                     ret = new UserTbls();
 
                     ret.setPemakai(rs.getString("PEMAKAI"));
-                    ret.setNrk(rs.getString("NRK"));
+                    ret.setNrk(rs.getString("NRK2"));
 
                 }
 

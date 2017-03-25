@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.db;
+package com.ctrl;
 
 import com.dao.userDao;
 import com.impl.userImpl;
+import com.koneksi.Config;
+import com.koneksi.DaoFactory;
 import com.koneksi.koneksi;
 import com.model.UserTbls;
+import com.sun.xml.internal.ws.api.message.Message;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -43,16 +46,33 @@ public class Login extends GenericForwardComposer {
 
         userDao userdao = new userImpl();
         Connection con = null;
+
+        DaoFactory dao = DaoFactory.getInstance(Config.JDBC_DB2_URL, Config.JDBC_DB2_DRIVER, user, pwd);//Config.JDBC_URL
         try {
             con = koneksi.BuatKoneksiDB2(user, pwd);
-            UserTbls usertbl = userdao.getUser(con, user);
-            session.setAttribute("con", con); 
-            Executions.getCurrent().sendRedirect("crud.zul");
-
+            if (!con.isClosed()) {
+                UserTbls usertbl = userdao.getUser(dao, user);
+                if (usertbl != null) {
+                    session.setAttribute("daofactory", dao);
+                    Executions.getCurrent().sendRedirect("crud.zul");
+                } else {
+//           
+                    session.setAttribute("daofactory", null);
+                    session.invalidate();
+                    Messagebox.show("Anda tidak berhak menggunakan Aplikasi ");
+                }
+            } else {
+                session.setAttribute("daofactory", null);
+                session.invalidate();
+                Messagebox.show("Anda tidak berhak menggunakan Aplikasi ");
+            }
+            koneksi.safeClose(null, null, con);
         } catch (SQLException ex) {
             koneksi.safeClose(null, null, con);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            session.setAttribute("daofactory", null);
             session.invalidate();
-
+            Messagebox.show("Anda tidak berhak menggunakan Aplikasi ");
         }
 
     }

@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul">
-    <window title="Entri Data" width=""  height="">
+    <window title="Entri Data" width="500px"  height="100%" apply="com.ctrl.crud">
+        <grid>
+            <columns>
+                <column  width="200px"/>
+                <column  width="280px"/>
+            </columns>
+            <rows>
+                <row>	
+                    <label  value="NRK"/>
+                    <textbox value="" id="txtNRK"/>
+                </row>
+                <row>	
+                    <label  value="NAMA"/>
+                    <textbox value="" id="txtNama"/>
+                </row>
+                <row>	
+                    <label  value="JENIS KELAMIN"/>
+                    <radiogroup Id="" onCheck="">
+                        <radio label="Laki-Laki" id="rbL"/>
+                        <radio label="Perempuan" id="rbP"/>
+                    </radiogroup> 
+                </row>
+                <row>	
+                    <label  value="TGL LAHIR"/> 
+                    <datebox id="dbTglLhr"/>
+                </row>
+                <row>	
+                    <label  value="GAJI"/>  
+                    <textbox value="" id="txtGaji"/>
+                </row>
+                <row>	
+                    <label  value=""/>  
+                    <button label="Simpan" id="btnSimpan">
+                    </button>
+                </row>
+            </rows>
+        </grid>
     </window> 
 </zk>

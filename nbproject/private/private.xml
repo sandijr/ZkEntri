@@ -4,7 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/index.zul</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/model/UserTbls.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/login.zul</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/crud.zul</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/model/TestTbl.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/koneksi/koneksi.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/Login.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/impl/userImpl.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/crud.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/dao/userDao.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/WEB-INF/web.xml</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/impl/testTblImpl.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/dao/testTbldao.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/css/gaya.css</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/menu.zul</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/koneksi/Config.java</file>
         </group>
     </open-files>
 </project-private>

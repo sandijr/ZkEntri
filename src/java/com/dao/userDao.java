@@ -5,8 +5,8 @@
  */
 package com.dao;
 
+import com.koneksi.DaoFactory;
 import com.model.UserTbls;
-import java.sql.Connection;
 
 /**
  *
@@ -14,5 +14,5 @@ import java.sql.Connection;
  */
 public interface userDao {
 
-    public UserTbls getUser(Connection con, String pemakai);
+    public UserTbls getUser(DaoFactory daoFactory, String pemakai);
 }

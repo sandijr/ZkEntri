@@ -1,17 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<zk xmlns="http://www.zkoss.org/2005/zul">
-    <window>
-	 <grid width="700px">
-		<columns>
-			<column label="Kode" width="200px"/>
-			<column label="Nama" width="500px"/>
-		</columns>
-		<rows>
-			<row>
-                            	<label id=""  />  
-                                <textbox value=""/>
-			</row>
-		</rows>
-	</grid>
-    </window>
+<zk xmlns:n="native">
+    <style src="/css/gaya.css" />
+    <zscript><![CDATA[
+        Integer[] products = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8};
+        Integer num = 4;
+        ]]></zscript>
+    <separator />
+    <image src="/img/banner.png" />
+    <include id="list" src="/menu.zul" ></include>
+    <separator height="4px"></separator>
+    <div sclass="mo_footer">Copyright 2005-2011 zkoss.org. All rights reserved.</div>
 </zk>

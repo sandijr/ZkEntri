@@ -2,7 +2,7 @@
 
 <zk xmlns="http://www.zkoss.org/2005/zul">
     
-    <window title="Login" width="300px"  height="200px" apply="com.db.Login">
+    <window title="Login" width="300px"  height="200px" apply="com.ctrl.Login">
         <grid> 
             <rows>
                 <row>	
