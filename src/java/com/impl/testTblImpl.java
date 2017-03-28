@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -183,6 +184,29 @@ public class testTblImpl implements testTbldao {
                     + " WHERE NRK=? ";
             ps = con.prepareStatement(sql);
             ps.setString(1, nrk);
+
+            ps.executeUpdate();
+            //con.close();
+
+        } catch (Exception err) {
+            err.getMessage().toString();
+        } finally {
+            koneksi.safeClose(null, ps, con);
+        }
+    }
+
+    public void updateTglLahirTestTbl(DaoFactory daoFactory, Date tgllhr, String nrk) {
+        PreparedStatement ps = null;
+        Connection con = null;
+        try {
+
+            con = daoFactory.getConnection();
+            String sql = " UPDATE DATUM_TBL "
+                    + " SET TALHIR=? "
+                    + " WHERE NRK=? ";
+            ps = con.prepareStatement(sql);
+            ps.setDate(1, new java.sql.Date(tgllhr.getTime()));
+            ps.setString(2, nrk);
 
             ps.executeUpdate();
             //con.close();

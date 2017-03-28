@@ -7,7 +7,7 @@ package com.dao;
 
 import com.koneksi.DaoFactory;
 import com.model.TestTbl;
-import java.sql.Connection;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,4 +28,7 @@ public interface testTbldao {
     void updateTestTbl(DaoFactory daoFactory, TestTbl testTbl);
 
     void hapusTestTbl(DaoFactory daoFactory, String nrk);
+
+    void updateTglLahirTestTbl(DaoFactory daoFactory, Date tgllhr, String nrk);
+
 }

@@ -1,0 +1,8 @@
+<zk>
+    <hlayout width="90%">
+        <textbox id="editTitle" width="400px" />
+        <button id="submitBtn" label="Submit" />
+        <button id="cancelBtn" label="Cancel" />
+    </hlayout>
+    <textbox id="editDesc" rows="5" width="90%" />
+</zk>

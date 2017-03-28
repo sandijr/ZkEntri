@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <preference>
+        <name>org.zkoss.zk.ui.WebApp.name</name>
+        <value>.:SMI:.</value>
+    </preference> 
+    <client-config>
+        <debug-js>true</debug-js>
+    </client-config>
+    <library-property>
+        <name>org.zkoss.web.classWebResource.cache</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.listbox.rod</name>
+        <value>true</value>
+    </library-property> 
+    <library-property>
+        <name>org.zkoss.zul.listbox.checkmarkDeselectOthers</name>
+        <value>true</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.grid.rod</name>
+        <value>true</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.listbox.rightSelect</name>
+        <value>true</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.progressbox.position</name>
+        <value>center,center</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.progressbox.mask</name>
+        <value>true</value>
+    </library-property>
+     
+    <client-config> 
+        <keep-across-visits>true</keep-across-visits> 
+    </client-config> 
+    <system-config> 
+        <disable-event-thread/> 
+    </system-config> 
+    <session-config> 
+        <timer-keep-alive>false</timer-keep-alive>
+        <max-desktops-per-session>15</max-desktops-per-session>
+        <max-requests-per-session>5</max-requests-per-session>
+        <max-pushes-per-session>3</max-pushes-per-session>
+        <device-type>ajax</device-type>
+        <automatic-timeout>true</automatic-timeout>
+        <timeout-uri>/loginuser.zul</timeout-uri>
+    </session-config> 
+    <desktop-config>
+        <desktop-timeout>10</desktop-timeout>
+    </desktop-config>
+      
+</zk>

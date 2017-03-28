@@ -58,6 +58,8 @@ public class UserTbls implements Serializable {
     private String kiriq;
     @Column(name = "KETERANGAN")
     private String keterangan;
+    //
+    private String pwd;
 
     public UserTbls() {
     }
@@ -148,6 +150,20 @@ public class UserTbls implements Serializable {
 
     public void setKeterangan(String keterangan) {
         this.keterangan = keterangan;
+    }
+
+    /**
+     * @return the pwd
+     */
+    public String getPwd() {
+        return pwd;
+    }
+
+    /**
+     * @param pwd the pwd to set
+     */
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
 }

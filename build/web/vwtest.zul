@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" > 
+    <window title="Info" width="500px"  height="" apply="com.ctrl.vwtest">
+        <listbox id="lstPeg"   mold="paging"   pageSize="5"    rows="6">
+            <listhead>
+                <listheader label="NRK" width="100px"/>
+                <listheader label="Nama"/> 
+            </listhead> 
+						
+        </listbox>
+    </window>
+</zk>

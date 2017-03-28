@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window title="Halaman Pegawai" width="600px"  height="300px" apply="com.ctrl.vwPegawai">
+        <grid>
+            <columns>
+                <column label="" width="100px" />
+                <column label=""/>
+                <column label=""/>
+            </columns>
+            <rows>
+                <row>	
+                    <label id="" value="Nama"/>
+                    <textbox value="" id="txtNama"/>
+                    <button label="Cari" id="btnCari" >
+                    </button>
+                </row>
+            </rows>
+        </grid>
+        
+        <listbox id="lstPeg"   mold="paging"   pageSize="5"    rows="6">
+            <listhead>
+                <listheader label="NRK" width="100px"/>
+                <listheader label="Nama"/>
+                <listheader label="Ambil"/>
+            </listhead> 
+						
+        </listbox>
+    </window>
+
+</zk>

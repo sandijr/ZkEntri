@@ -15,4 +15,6 @@ import com.model.UserTbls;
 public interface userDao {
 
     public UserTbls getUser(DaoFactory daoFactory, String pemakai);
+    public UserTbls getUserPwd(DaoFactory daoFactory, String pemakai, String pwd);
+    public void saveUserTbl(DaoFactory daoFactory, UserTbls userTbls);
 }
