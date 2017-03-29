@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window title="Halaman 1" width=""  height="" apply="com.ctrl.form1">
+        <textbox value="" id="txt1"/>
+        <button label="Show" id="btnShow" >
+        </button>
+         <button label="Show2" id="btnShow2" >
+        </button>
+    </window>
+</zk>

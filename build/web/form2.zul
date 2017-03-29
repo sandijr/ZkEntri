@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window title="Halaman 2" width=""  height="" apply="com.ctrl.form2">
+        <button label="Close" id="btnClose" >
+        </button>
+        <button label="Close2" id="btnClose2" >
+        </button>
+    </window>
+</zk>
