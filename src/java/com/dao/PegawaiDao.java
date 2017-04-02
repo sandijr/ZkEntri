@@ -7,6 +7,7 @@ package com.dao;
 
 import com.koneksi.DaoFactory;
 import com.model.Pegawai;
+import com.model.PenugasanTest;
 import java.util.Date;
 import java.util.List;
 
@@ -17,11 +18,12 @@ import java.util.List;
 public interface PegawaiDao {
 
     //Methode Cari Nama
-    List<Pegawai> getPegawaiByNama(DaoFactory daoFactory,String nama);
+    List<Pegawai> getPegawaiByNama(DaoFactory daoFactory, String nama);
 
     Pegawai getPegawaiByNrk(DaoFactory daoFactory, String nrk);
-    
+
     List<Pegawai> getPegawaiByTglLahir(DaoFactory daoFactory, Date tgllahiraa);
-    
+
+    List<PenugasanTest> getTujuanPenugasan(DaoFactory daoFactory);
 
 }

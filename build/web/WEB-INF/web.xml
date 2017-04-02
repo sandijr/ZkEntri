@@ -72,6 +72,10 @@ Copyright (C) 2004 Potix Corporation. All Rights Reserved.
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>com.ctrl.NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>tampilReport</servlet-name>
+        <servlet-class>com.servlet.tampilReport</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>zkLoader</servlet-name>
         <url-pattern>*.zul</url-pattern>
@@ -168,6 +172,10 @@ Copyright (C) 2004 Potix Corporation. All Rights Reserved.
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tampilReport</servlet-name>
+        <url-pattern>/tampilReport</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>60</session-timeout>

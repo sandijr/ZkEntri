@@ -61,7 +61,7 @@ public class TestTbl implements Serializable {
     @Column(name = "BBMASKER")
     private Short bbmasker;
     @Column(name = "NKPNFORMAL")
-    private Short nkpnformal;
+    private BigDecimal nkpnformal;
     @Column(name = "DARAH")
     private Short darah;
     @Basic(optional = false)
@@ -232,13 +232,9 @@ public class TestTbl implements Serializable {
         this.bbmasker = bbmasker;
     }
 
-    public Short getNkpnformal() {
-        return nkpnformal;
-    }
+   
 
-    public void setNkpnformal(Short nkpnformal) {
-        this.nkpnformal = nkpnformal;
-    }
+    
 
     public Short getDarah() {
         return darah;
@@ -510,6 +506,20 @@ public class TestTbl implements Serializable {
 
     public void setNondis(Date nondis) {
         this.nondis = nondis;
+    }
+
+    /**
+     * @return the nkpnformal
+     */
+    public BigDecimal getNkpnformal() {
+        return nkpnformal;
+    }
+
+    /**
+     * @param nkpnformal the nkpnformal to set
+     */
+    public void setNkpnformal(BigDecimal nkpnformal) {
+        this.nkpnformal = nkpnformal;
     }
     
 }

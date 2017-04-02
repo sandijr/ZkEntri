@@ -5,13 +5,18 @@
  */
 package com.ctrl;
 
+import com.dao.PegawaiDao;
 import com.dao.TransPayDao;
 import com.dao.testTbldao;
+import com.impl.PegawaiImpl;
 import com.impl.TransPayImpl;
 import com.impl.testTblImpl;
 import com.koneksi.DaoFactory;
+import com.koneksi.Konversi;
+import com.model.PenugasanTest;
 import com.model.TestTbl;
 import com.model.VwTahunTranspay;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,7 +46,7 @@ import org.zkoss.zul.Window;
  */
 public class crud extends GenericForwardComposer {
 
-    private Textbox txtNRK;
+    private Textbox txtNRK, txtSplit;
     private Textbox txtNama;
     private Textbox txtGaji;
     private Datebox dbTglLhr;
@@ -52,10 +57,12 @@ public class crud extends GenericForwardComposer {
     private Listbox lstTest;
     private Window winInfo;
     private Button btnPilih;
+    private Label lblTujuan;
 
     @Override
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
+        session.setAttribute("Path2", application.getRealPath(""));
         DaoFactory daofactory = (DaoFactory) session.getAttribute("daofactory");
         if (daofactory == null) {
             Executions.getCurrent().sendRedirect("loginuser.zul");
@@ -74,9 +81,33 @@ public class crud extends GenericForwardComposer {
             getLstGaji().getItems().clear();
         }
         tampildatum();
+        //
+        PegawaiDao peg = new PegawaiImpl();
+        List<PenugasanTest> tugas = peg.getTujuanPenugasan(daofactory);
+        String tujuans = "";
+        int baris = 0;
+        for (PenugasanTest pt : tugas) {
+            if (baris == 0) {
+                tujuans = pt.getTujuan();
+            } else {
+                tujuans = tujuans + "-" + pt.getTujuan();
+            }
+            baris++;
+        }
+        getLblTujuan().setValue(tujuans);
+    }
+
+    public void onClick$btnSplit() {
+        String string = getTxtSplit().getValue();
+        String[] parts = string.split("-");
+
+        for (int i = 0; i < parts.length; i++) {
+            Messagebox.show(parts[i]);
+        }
     }
 
     public void tampildatum() {
+        Konversi konv = new Konversi();
         DaoFactory daofactory = (DaoFactory) session.getAttribute("daofactory");
         testTbldao testtbldao = new testTblImpl();
         List<TestTbl> lstPegawai = testtbldao.getTestTblSemua(daofactory);
@@ -93,6 +124,13 @@ public class crud extends GenericForwardComposer {
             Listcell lscellnama = new Listcell(test.getNama());
             lscellnama.setParent(lsitem);
 
+            Listcell lscelltalahir = new Listcell(konv.DateToString(test.getTalhir()));
+            lscelltalahir.setParent(lsitem);
+
+            Listcell lscellnkp = new Listcell(konv.getFormatUang(String.valueOf(test.getNkpnformal())));
+            lscellnkp.setStyle("text-align: right;");
+            lscellnkp.setParent(lsitem);
+
             Listcell lscelleditnrk = new Listcell();
             lscelleditnrk.appendChild(getButtonEdit(test.getNrk()));
             lscelleditnrk.setParent(lsitem);
@@ -108,6 +146,15 @@ public class crud extends GenericForwardComposer {
             Listcell lscellComponen = new Listcell();
             lscellComponen.appendChild(getComponen(test.getTalhir(), test.getNrk()));
             lscellComponen.setParent(lsitem);
+
+            Listcell lscellTampilReportPDF = new Listcell();
+            lscellTampilReportPDF.appendChild(getButtonReportPDF(test.getNrk()));
+            lscellTampilReportPDF.setParent(lsitem);
+            
+            
+            Listcell lscellTampilReportXLS = new Listcell();
+            lscellTampilReportXLS.appendChild(getButtonReportXLS(test.getNrk()));
+            lscellTampilReportXLS.setParent(lsitem);
         }
     }
 
@@ -201,6 +248,29 @@ public class crud extends GenericForwardComposer {
         return rm;
     }
 
+    private Button getButtonReportPDF(final String nrk) {
+        Button rm = new Button();
+        rm.setImage("/img/logo1.png");
+        rm.addEventListener("onClick", new org.zkoss.zk.ui.event.EventListener<Event>() {
+            public void onEvent(Event t) throws Exception {
+                Executions.getCurrent().sendRedirect("http://localhost:8084/ZK602ceApp6/tampilReport?nrk=" + nrk.trim() + "&jns=pdf", "_blank");
+
+            }
+        });
+        return rm;
+    }
+    private Button getButtonReportXLS(final String nrk) {
+        Button rm = new Button();
+        rm.setImage("/img/logo1.png");
+        rm.addEventListener("onClick", new org.zkoss.zk.ui.event.EventListener<Event>() {
+            public void onEvent(Event t) throws Exception {
+                Executions.getCurrent().sendRedirect("http://localhost:8084/ZK602ceApp6/tampilReport?nrk=" + nrk.trim() + "&jns=xls", "_blank");
+
+            }
+        });
+        return rm;
+    }
+
     private Button getButtonHapus(final String nrk) {
         Button rm = new Button();
         rm.setImage("/img/logo1.png");
@@ -266,8 +336,8 @@ public class crud extends GenericForwardComposer {
         } else if (getRbP().isChecked()) {
             test2.setJenkel(Short.valueOf("2"));
         }
-        test2.setNkpnformal(Short.valueOf(getLstGaji().getSelectedItem().getValue() + ""));
-
+        //test2.setNkpnformal(Short.valueOf(getLstGaji().getSelectedItem().getValue() + ""));
+        test2.setNkpnformal(BigDecimal.ZERO);
         if (daofactory == null) {
             Executions.getCurrent().sendRedirect("loginuser.zul");
         } else {
@@ -417,5 +487,33 @@ public class crud extends GenericForwardComposer {
      */
     public void setWinInfo(Window winInfo) {
         this.winInfo = winInfo;
+    }
+
+    /**
+     * @return the lblTujuan
+     */
+    public Label getLblTujuan() {
+        return lblTujuan;
+    }
+
+    /**
+     * @param lblTujuan the lblTujuan to set
+     */
+    public void setLblTujuan(Label lblTujuan) {
+        this.lblTujuan = lblTujuan;
+    }
+
+    /**
+     * @return the txtSplit
+     */
+    public Textbox getTxtSplit() {
+        return txtSplit;
+    }
+
+    /**
+     * @param txtSplit the txtSplit to set
+     */
+    public void setTxtSplit(Textbox txtSplit) {
+        this.txtSplit = txtSplit;
     }
 }

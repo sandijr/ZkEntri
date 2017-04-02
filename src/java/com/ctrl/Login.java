@@ -11,7 +11,6 @@ import com.koneksi.Config;
 import com.koneksi.DaoFactory;
 import com.koneksi.koneksi;
 import com.model.UserTbls;
-import com.sun.xml.internal.ws.api.message.Message;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;

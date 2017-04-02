@@ -44,7 +44,7 @@ public class testTblImpl implements testTbldao {
                     ret.setNama(rs.getString("NAMA"));
                     ret.setJenkel(rs.getShort("JENKEL"));
                     ret.setTalhir(rs.getDate("TALHIR"));
-                    ret.setNkpnformal(rs.getShort("NKPNFORMAL"));
+                    ret.setNkpnformal(rs.getBigDecimal("NKPNFORMAL"));
                 }
 
             }
@@ -76,7 +76,7 @@ public class testTblImpl implements testTbldao {
                     test.setNama(rs.getString("NAMA"));
                     test.setJenkel(rs.getShort("JENKEL"));
                     test.setTalhir(rs.getDate("TALHIR"));
-                    test.setNkpnformal(rs.getShort("NKPNFORMAL"));
+                    test.setNkpnformal(rs.getBigDecimal("NKPNFORMAL"));
                     ret.add(test);
                 }
             }
@@ -108,7 +108,7 @@ public class testTblImpl implements testTbldao {
                     test.setNama(rs.getString("NAMA"));
                     test.setJenkel(rs.getShort("JENKEL"));
                     test.setTalhir(rs.getDate("TALHIR"));
-                    test.setNkpnformal(rs.getShort("NKPNFORMAL"));
+                    test.setNkpnformal(rs.getBigDecimal("NKPNFORMAL"));
                     ret.add(test);
                 }
             }
@@ -133,7 +133,7 @@ public class testTblImpl implements testTbldao {
             ps.setString(2, testTbl.getNama());
             ps.setInt(3, testTbl.getJenkel());
             ps.setDate(4, new java.sql.Date(testTbl.getTalhir().getTime()));
-            ps.setInt(5, testTbl.getNkpnformal());
+            ps.setBigDecimal(5, testTbl.getNkpnformal());
 
             ps.executeUpdate();
             // con.close();
@@ -161,7 +161,7 @@ public class testTblImpl implements testTbldao {
             ps.setString(1, testTbl.getNama());
             ps.setInt(2, testTbl.getJenkel());
             ps.setDate(3, new java.sql.Date(testTbl.getTalhir().getTime()));
-            ps.setInt(4, testTbl.getNkpnformal());
+            ps.setBigDecimal(4, testTbl.getNkpnformal());
             ps.setString(5, testTbl.getNrk());
 
             ps.executeUpdate();

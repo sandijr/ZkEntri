@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.zkoss.lang.Library;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
@@ -38,7 +39,9 @@ public class LoginUser extends GenericForwardComposer {
     public void doAfterCompose(Component comp) throws Exception {
 
         super.doAfterCompose(comp);
-
+        getTxtUser().setValue("(username)");
+        getTxtPwd().setValue("(password)");
+        //Library.setProperty("org.zkoss.theme.preferred", "sandithemes");
     }
 
     public void onClick$btnLogin() {

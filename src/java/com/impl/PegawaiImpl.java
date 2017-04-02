@@ -10,6 +10,7 @@ import com.koneksi.DaoFactory;
 import com.koneksi.koneksi;
 import com.model.DarahTbl;
 import com.model.Pegawai;
+import com.model.PenugasanTest;
 import com.model.TestTbl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,12 +45,12 @@ public class PegawaiImpl implements PegawaiDao {
                 while (rs.next()) {
                     Pegawai peg = new Pegawai();
                     peg.setNrk(rs.getString("NRK"));
-                    peg.setNama(rs.getString("NAMA")); 
-                    
+                    peg.setNama(rs.getString("NAMA"));
+
                     DarahTbl darah = new DarahTbl();
                     darah.setDarah(rs.getShort("DARAH"));
                     darah.setNmdarah(rs.getString("NMDARAH"));
-                    
+
                     peg.setDarah(darah);
                     ret.add(peg);
                 }
@@ -63,7 +64,7 @@ public class PegawaiImpl implements PegawaiDao {
     }
 
     public Pegawai getPegawaiByNrk(DaoFactory daoFactory, String nrk) {
-      ResultSet rs = null;
+        ResultSet rs = null;
         PreparedStatement ps = null;
         Pegawai ret = null;
         Connection con = null;
@@ -79,7 +80,7 @@ public class PegawaiImpl implements PegawaiDao {
                 ret = new Pegawai();
                 while (rs.next()) {
                     ret.setNrk(rs.getString("NRK"));
-                    ret.setNama(rs.getString("NAMA")); 
+                    ret.setNama(rs.getString("NAMA"));
                 }
 
             }
@@ -88,10 +89,37 @@ public class PegawaiImpl implements PegawaiDao {
         } finally {
             koneksi.safeClose(rs, ps, con);
         }
-        return ret; }
+        return ret;
+    }
 
     public List<Pegawai> getPegawaiByTglLahir(DaoFactory daoFactory, Date tgllahiraa) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<PenugasanTest> getTujuanPenugasan(DaoFactory daoFactory) {
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        List<PenugasanTest> ret = new ArrayList<PenugasanTest>();
+        Connection con = null;
+        try {
+
+            con = daoFactory.getConnection();
+            String query = " SELECT DISTINCT UCASE(TUJUAN) AS TUJUAN  FROM PENUGASAN WHERE NRK='87110009'   ";
+            ps = con.prepareStatement(query, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    PenugasanTest peg = new PenugasanTest();
+                    peg.setTujuan(rs.getString("TUJUAN"));
+                    ret.add(peg);
+                }
+            }
+
+        } catch (SQLException e) {
+        } finally {
+            koneksi.safeClose(rs, ps, con);
+        }
+        return ret;
     }
 
 }

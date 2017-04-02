@@ -12,26 +12,33 @@
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/model/KelkerTbl.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/WEB-INF/zk.xml</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/vwtest.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/form2.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/impl/userImpl.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/crud.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/model/Pegawai.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/impl/TransPayImpl.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/form1.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/InplaceEditor.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/impl/testTblImpl.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/form2.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/dao/testTbldao.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/vwpegawai.zul</file>
-            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/koneksi/Config.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/index.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/dao/PegawaiDao.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/koneksi/Konversi.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/dao/TransPayDao.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/login.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/crud.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/model/TestTbl.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/koneksi/koneksi.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/servlet/tampilReport.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/newuser.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/impl/PegawaiImpl.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/NewUser.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/ctrl/Login.java</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/vwtest.zul</file>
             <file>file:/E:/Documents/NetBeansProjects/ZKEntri/src/java/com/dao/userDao.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/ZKEntri/web/form1.zul</file>
         </group>
     </open-files>
 </project-private>

@@ -3,12 +3,26 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <window title="Entri Data" width="800px"  height="100%" apply="com.ctrl.crud">
         <custom-attributes org.zkoss.zul.listbox.rod="false" scope="page" org.zkoss.zul.grid.initRodSize="30"/> 
+       
         <grid>
             <columns>
                 <column  width="200px"/>
                 <column  width="280px"/>
             </columns>
             <rows>
+                <row>	
+                    <label  value="Tujuan"/>  
+                    <label id="lblTujuan" />
+                </row>
+                <row>	
+                    <label  value="Split"/>  
+                     <textbox value="" id="txtSplit"/>
+                </row>
+                <row>	
+                    <label  value="Split"/>  
+                    <button label="Split" id="btnSplit">
+                    </button>
+                </row>
                 <row>	
                     <label  value="NRK"/>
                     <textbox value="" id="txtNRK"/>
@@ -45,20 +59,26 @@
                     <button label="Simpan" id="btnSimpan">
                     </button>
                 </row>
+                
             </rows>
         </grid>
+       
+ 
         <listbox checkmark="true"   multiple="true" nonselectableTags=""  id="lstTest" width="700px"  mold="paging"   pageSize="5"    rows="6" >
             <listhead>
                 <listheader label="NRK" width="100px"/>
                 <listheader label="Nama" width="150px"/>
+                <listheader label="Tgl Lahir" width="150px"/>
+                <listheader label="Gaji" width="150px" />
                 <listheader label="Edit" width="60px"/>
                 <listheader label="Hapus" width="60px"/>
                 <listheader label="Info" width="60px"/>
                 <listheader label="Edit Tgl. Lahir" width="250px"/>
+                <listheader label="Tampil Report PDF" width="250px"/>
+                <listheader label="Tampil Report XLS" width="250px"/>
             </listhead>
-            
-						
         </listbox>
+        
         <button label="Pilih" id="btnPilih">
         </button>
     </window> 
