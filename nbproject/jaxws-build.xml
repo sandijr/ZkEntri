@@ -28,7 +28,7 @@
     </target>
     <target name="wsimport-client-servicePertama" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/servicePertama"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/servicePertama" destdir="${build.generated.dir}/jax-wsCache/servicePertama" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/servicePertama/wsdl/localhost_8080/cobaWS/servicePertama.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/cobaWS/servicePertama?wsdl" xnocompile="true" xendorsed="true" package="com.baca.ws">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/servicePertama" destdir="${build.generated.dir}/jax-wsCache/servicePertama" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/servicePertama/wsdl/localhost_8080/cobaWS/servicePertama.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/cobaWS/servicePertama?wsdl" xnocompile="true" xendorsed="true" package="com.bacaWS.Pertama">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/servicePertama/wsdl/localhost_8080/cobaWS/servicePertama.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/servicePertama"/>
         </wsimport>
@@ -39,24 +39,8 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-servicePertama" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/baca/ws"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/bacaWS/Pertama"/>
         <delete dir="${build.generated.dir}/jax-wsCache/servicePertama"/>
     </target>
-    <target name="wsimport-client-globalweather" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/globalweather"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/globalweather" destdir="${build.generated.dir}/jax-wsCache/globalweather" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/globalweather/wsdl/globalweather.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="file:/E:/Documents/Downloads/globalweather.wsdl" xnocompile="true" xendorsed="true" package="com.bacawskota">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/globalweather/wsdl/globalweather.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/globalweather"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/globalweather">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-globalweather" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/bacawskota"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/globalweather"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-servicePertama, wsimport-client-globalweather"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-servicePertama"/>
 </project>
