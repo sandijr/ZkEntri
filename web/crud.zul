@@ -8,6 +8,7 @@
             <columns>
                 <column  width="200px"/>
                 <column  width="280px"/>
+                <column  width="280px"/>
             </columns>
             <rows>
                 <row>	
@@ -16,13 +17,11 @@
                 </row>
                 <row>	
                     <label  value="Split"/>  
-                     <textbox value="" id="txtSplit"/>
-                </row>
-                <row>	
-                    <label  value="Split"/>  
+                    <textbox value="" id="txtSplit"/>
                     <button label="Split" id="btnSplit">
                     </button>
                 </row>
+                 
                 <row>	
                     <label  value="NRK"/>
                     <textbox value="" id="txtNRK"/>
@@ -38,6 +37,12 @@
                         <radio label="Perempuan" id="rbP"/>
                     </radiogroup> 
                 </row>
+                <row>	
+                    <label  value="TGL LAHIR Konversi"/>  
+                    <textbox value="" id="txtDate"/>
+                    <button label="Konversi ke Date" id="btnKonversi" >
+                    </button>
+                </row> 
                 <row>	
                     <label  value="TGL LAHIR"/> 
                     <datebox id="dbTglLhr"/>

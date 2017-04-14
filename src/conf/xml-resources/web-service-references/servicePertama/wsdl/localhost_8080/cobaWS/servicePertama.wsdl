@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="servicePertama" targetNamespace="http://ade.kang.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ade.kang.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://ade.kang.com/" version="1.0" xmlns:tns="http://ade.kang.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="cariPegawaiSesuaiNama" type="tns:cariPegawaiSesuaiNama"/>
+<xs:element name="cariPegawaiSesuaiNamaResponse" type="tns:cariPegawaiSesuaiNamaResponse"/>
+<xs:element name="hello" type="tns:hello"/>
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+<xs:element name="tambah" type="tns:tambah"/>
+<xs:element name="tambahResponse" type="tns:tambahResponse"/>
+<xs:complexType name="tambah">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="parameter1" type="xs:string"/>
+      <xs:element minOccurs="0" name="parameter2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="tambahResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="cariPegawaiSesuaiNama">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nama" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="cariPegawaiSesuaiNamaResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:pegawai"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="pegawai">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="acctno" type="xs:string"/>
+      <xs:element minOccurs="0" name="aktkno" type="xs:string"/>
+      <xs:element minOccurs="0" name="astekno" type="xs:string"/>
+      <xs:element minOccurs="0" name="baju" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankkey" type="xs:string"/>
+      <xs:element minOccurs="0" name="bbmasker" type="xs:short"/>
+      <xs:element minOccurs="0" name="berat" type="xs:short"/>
+      <xs:element minOccurs="0" name="berhenti" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="cacat" type="tns:cacatTbl"/>
+      <xs:element minOccurs="0" name="celana" type="xs:string"/>
+      <xs:element minOccurs="0" name="darah" type="tns:darahTbl"/>
+      <xs:element minOccurs="0" name="handphone" type="xs:string"/>
+      <xs:element minOccurs="0" name="inputStamp" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="inputer" type="xs:string"/>
+      <xs:element name="jenkel" type="xs:short"/>
+      <xs:element minOccurs="0" name="kdagama" type="tns:agamaTbl"/>
+      <xs:element minOccurs="0" name="kdbank" type="xs:string"/>
+      <xs:element minOccurs="0" name="kdsuku" type="tns:sukuTbl"/>
+      <xs:element minOccurs="0" name="kelker" type="tns:kelkerTbl"/>
+      <xs:element minOccurs="0" name="kidal" type="xs:short"/>
+      <xs:element minOccurs="0" name="kolomd1" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="kolomd2" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="kolomd3" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ktpno" type="xs:string"/>
+      <xs:element minOccurs="0" name="mailnw" type="xs:string"/>
+      <xs:element minOccurs="0" name="muang" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="nama" type="xs:string"/>
+      <xs:element minOccurs="0" name="nkpnformal" type="xs:short"/>
+      <xs:element minOccurs="0" name="nokartu" type="xs:string"/>
+      <xs:element minOccurs="0" name="nondis" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="noothers" type="xs:string"/>
+      <xs:element minOccurs="0" name="nosk" type="xs:string"/>
+      <xs:element minOccurs="0" name="noskcp" type="xs:string"/>
+      <xs:element minOccurs="0" name="npwp" type="xs:string"/>
+      <xs:element minOccurs="0" name="nrk" type="xs:string"/>
+      <xs:element minOccurs="0" name="pathir" type="xs:string"/>
+      <xs:element minOccurs="0" name="sepatu" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="stawin" type="tns:stawinTbl"/>
+      <xs:element minOccurs="0" name="talhir" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="tgsk" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="tgskcp" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="thtno" type="xs:string"/>
+      <xs:element minOccurs="0" name="tinggi" type="xs:short"/>
+      <xs:element minOccurs="0" name="tmtcp" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ttmasker" type="xs:short"/>
+      <xs:element minOccurs="0" name="warganegara" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="cacatTbl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cacat" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmcacat" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="pegawaiList" nillable="true" type="tns:pegawai"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="darahTbl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="darah" type="xs:short"/>
+      <xs:element minOccurs="0" name="jenis" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmdarah" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="pegawaiList" nillable="true" type="tns:pegawai"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="agamaTbl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="kdagama" type="xs:string"/>
+      <xs:element minOccurs="0" name="namaAgama" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="pegawaiList" nillable="true" type="tns:pegawai"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="sukuTbl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="kdsuku" type="xs:string"/>
+      <xs:element minOccurs="0" name="lokal" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmsuku" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="pegawaiList" nillable="true" type="tns:pegawai"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="kelkerTbl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="kelker" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmkelker" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="pegawaiList" nillable="true" type="tns:pegawai"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="stawinTbl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IKeluarga" type="xs:decimal"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="pegawaiList" nillable="true" type="tns:pegawai"/>
+      <xs:element minOccurs="0" name="stawin" type="xs:short"/>
+      <xs:element minOccurs="0" name="uraian" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="tambah">
+    <wsdl:part element="tns:tambah" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="tambahResponse">
+    <wsdl:part element="tns:tambahResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cariPegawaiSesuaiNamaResponse">
+    <wsdl:part element="tns:cariPegawaiSesuaiNamaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="helloResponse">
+    <wsdl:part element="tns:helloResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cariPegawaiSesuaiNama">
+    <wsdl:part element="tns:cariPegawaiSesuaiNama" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hello">
+    <wsdl:part element="tns:hello" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="servicePertama">
+    <wsdl:operation name="tambah">
+      <wsdl:input message="tns:tambah" name="tambah">
+    </wsdl:input>
+      <wsdl:output message="tns:tambahResponse" name="tambahResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <wsdl:input message="tns:hello" name="hello">
+    </wsdl:input>
+      <wsdl:output message="tns:helloResponse" name="helloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cariPegawaiSesuaiNama">
+      <wsdl:input message="tns:cariPegawaiSesuaiNama" name="cariPegawaiSesuaiNama">
+    </wsdl:input>
+      <wsdl:output message="tns:cariPegawaiSesuaiNamaResponse" name="cariPegawaiSesuaiNamaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="servicePertamaSoapBinding" type="tns:servicePertama">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="tambah">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="tambah">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="tambahResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="helloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cariPegawaiSesuaiNama">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cariPegawaiSesuaiNama">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cariPegawaiSesuaiNamaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicePertama">
+    <wsdl:port binding="tns:servicePertamaSoapBinding" name="servicePertamaPort">
+      <soap:address location="http://localhost:8080/cobaWS/servicePertama"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

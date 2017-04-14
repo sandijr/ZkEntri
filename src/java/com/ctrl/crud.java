@@ -58,6 +58,7 @@ public class crud extends GenericForwardComposer {
     private Window winInfo;
     private Button btnPilih;
     private Label lblTujuan;
+    private Textbox txtDate;
 
     @Override
     public void doAfterCompose(Component comp) throws Exception {
@@ -97,10 +98,19 @@ public class crud extends GenericForwardComposer {
         getLblTujuan().setValue(tujuans);
     }
 
+    public void onClick$btnKonversi() {
+        Konversi kon = new Konversi();
+        if (Konversi.isDateValid(getTxtDate().getValue())) {
+            dbTglLhr.setValue(kon.StringToDate(getTxtDate().getValue()));
+        } else {
+            Messagebox.show("Format Tgl salah");
+        }
+
+    }
+
     public void onClick$btnSplit() {
         String string = getTxtSplit().getValue();
         String[] parts = string.split("-");
-
         for (int i = 0; i < parts.length; i++) {
             Messagebox.show(parts[i]);
         }
@@ -110,7 +120,7 @@ public class crud extends GenericForwardComposer {
         Konversi konv = new Konversi();
         DaoFactory daofactory = (DaoFactory) session.getAttribute("daofactory");
         testTbldao testtbldao = new testTblImpl();
-        List<TestTbl> lstPegawai = testtbldao.getTestTblSemua(daofactory);
+        List<TestTbl> lstPegawai = testtbldao.getTestTblSemuaBYusername(daofactory, "demo.1");
 
         getLstTest().getItems().clear();
 
@@ -150,8 +160,7 @@ public class crud extends GenericForwardComposer {
             Listcell lscellTampilReportPDF = new Listcell();
             lscellTampilReportPDF.appendChild(getButtonReportPDF(test.getNrk()));
             lscellTampilReportPDF.setParent(lsitem);
-            
-            
+
             Listcell lscellTampilReportXLS = new Listcell();
             lscellTampilReportXLS.appendChild(getButtonReportXLS(test.getNrk()));
             lscellTampilReportXLS.setParent(lsitem);
@@ -259,6 +268,7 @@ public class crud extends GenericForwardComposer {
         });
         return rm;
     }
+
     private Button getButtonReportXLS(final String nrk) {
         Button rm = new Button();
         rm.setImage("/img/logo1.png");
@@ -515,5 +525,19 @@ public class crud extends GenericForwardComposer {
      */
     public void setTxtSplit(Textbox txtSplit) {
         this.txtSplit = txtSplit;
+    }
+
+    /**
+     * @return the txtDate
+     */
+    public Textbox getTxtDate() {
+        return txtDate;
+    }
+
+    /**
+     * @param txtDate the txtDate to set
+     */
+    public void setTxtDate(Textbox txtDate) {
+        this.txtDate = txtDate;
     }
 }

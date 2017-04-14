@@ -3,6 +3,15 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     
     <window title="Login..." width="300px"  height="200px" apply="com.ctrl.LoginUser">
+        <script type="text/javascript">
+            zk.afterMount(function() { 
+           document.addEventListener("contextmenu", function(e){
+                e.preventDefault();
+            }, false);
+            
+            });
+             
+        </script>  
         <grid> 
             <rows>
                 <row>	

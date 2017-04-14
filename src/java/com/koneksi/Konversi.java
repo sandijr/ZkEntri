@@ -7,6 +7,7 @@ package com.koneksi;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,6 +22,29 @@ public class Konversi {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         ret = df.format(dt);
         return ret;
+    }
+
+    public Date StringToDate(String str) {
+        Date ret = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date = formatter.parse(str);
+            ret = date;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    public static boolean isDateValid(String date) {
+        try {
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            df.setLenient(false);
+            df.parse(date);
+            return true;
+        } catch (ParseException e) {
+            return false;
+        }
     }
 
     public String getFormatUang(String src) {

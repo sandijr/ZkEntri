@@ -21,6 +21,8 @@ public interface testTbldao {
 
     List<TestTbl> getTestTblSemua(DaoFactory daoFactory);
 
+    List<TestTbl> getTestTblSemuaBYusername(DaoFactory daoFactory, String username);
+
     List<TestTbl> getTestTblByNama(DaoFactory daoFactory, String nama);
 
     void saveTestTbl(DaoFactory daoFactory, TestTbl testTbl);

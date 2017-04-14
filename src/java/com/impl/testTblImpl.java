@@ -218,4 +218,36 @@ public class testTblImpl implements testTbldao {
         }
     }
 
+    public List<TestTbl> getTestTblSemuaBYusername(DaoFactory daoFactory, String username) {
+
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        List<TestTbl> ret = new ArrayList<TestTbl>();
+        Connection con = null;
+        try {
+
+            con = daoFactory.getConnection();
+            String query = "select NRK, NAMA, JENKEL, TALHIR, NKPNFORMAL from  " + "\"" + username.toUpperCase() + "\"" + ".DATUM_TBL  ";
+
+            ps = con.prepareStatement(query, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+            rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    TestTbl test = new TestTbl();
+                    test.setNrk(rs.getString("NRK"));
+                    test.setNama(rs.getString("NAMA"));
+                    test.setJenkel(rs.getShort("JENKEL"));
+                    test.setTalhir(rs.getDate("TALHIR"));
+                    test.setNkpnformal(rs.getBigDecimal("NKPNFORMAL"));
+                    ret.add(test);
+                }
+            }
+
+        } catch (SQLException e) {
+        } finally {
+            koneksi.safeClose(rs, ps, con);
+        }
+        return ret;
+    }
+
 }
